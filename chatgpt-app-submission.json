@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developers.openai.com/apps-sdk/schemas/chatgpt-app-submission.v1.json",
+  "schema_version": 1,
+  "app_info": {
+    "display_name": "Ralchev Coach",
+    "subtitle": "Professional track & field coaching",
+    "description": "Ralchev Coach helps sprinters, hurdlers, jumpers and combined-events athletes get an initial assessment and connect with professional track & field coach Ivan Ralchev for individualized online coaching.",
+    "category": "HEALTH_FITNESS"
+  },
+  "tools": {
+    "get_coach_profile": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Returns static public information about coach Ivan Ralchev and does not modify any data.",
+        "open_world_justification": "Does not write to external systems or public internet state.",
+        "destructive_justification": "Does not delete, modify or destroy data."
+      }
+    },
+    "get_coaching_options": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Returns static service and pricing information only.",
+        "open_world_justification": "Does not perform external actions or write to third-party systems.",
+        "destructive_justification": "Does not modify or delete data."
+      }
+    },
+    "prepare_athlete_assessment": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Processes user-supplied training context in memory and returns structured assessment context without storing or changing external data.",
+        "open_world_justification": "Does not send data to external services or modify public internet state.",
+        "destructive_justification": "Does not delete or alter user data or third-party data."
+      }
+    }
+  }
+}

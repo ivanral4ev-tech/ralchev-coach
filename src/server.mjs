@@ -196,6 +196,9 @@ app.all("/mcp", async (req, res) => {
 app.get("/privacy", (req, res) => {
   res.redirect("https://github.com/ivanral4ev-tech/ralchev-coach/blob/main/policies/PRIVACY-POLICY-DRAFT.md");
 });
+app.get("/terms", (req, res) => {
+  res.redirect("https://github.com/ivanral4ev-tech/ralchev-coach/blob/main/policies/TERMS-OF-SERVICE-DRAFT.md");
+});
 const port = Number(process.env.PORT || 8000);
 app.listen(port, "0.0.0.0", () => {
   console.log(`${APP_NAME} MCP server listening on http://0.0.0.0:${port}/mcp`);

@@ -164,7 +164,9 @@ function createServer() {
 const app = express();
 app.use(cors({ origin: "*", methods: ["GET", "POST", "DELETE", "OPTIONS"], allowedHeaders: ["Content-Type", "mcp-session-id"] }));
 app.use(express.json({ limit: "1mb" }));
-
+app.get("/.well-known/openai-apps-challenge", (_req, res) => {
+  res.type("text/plain").send("jX95K_W_Q4T3ACANa_mOVWbcv2nmqg8bNvg2Nzh-kW0");
+});
 app.get("/", (_req, res) => {
   res.json({
     name: APP_NAME,
